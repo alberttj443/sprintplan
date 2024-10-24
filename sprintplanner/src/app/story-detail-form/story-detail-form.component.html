@@ -1,1 +1,18 @@
-<p>story-detail-form works!</p>
+<form [formGroup]="storyForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">  Name:</label>
+      <input id="name" name="name" formControlName="name">
+      <span *ngIf="isUniqueName">The name is already exists</span>
+    </div>
+    <div>
+      <label for="point">  Point:</label>
+      <input type="number" name="point" id="point" formControlName="point">
+    </div>
+    <div>
+        <label for="desc">Description:</label> 
+        <textarea name="desc" id="desc" formControlName="description"></textarea>
+      </div>
+      
+    <button type="submit" [disabled]="storyForm.invalid || isUniqueName">Submit</button> 
+    <button type="button" (click)="onCloseForm()">  Close   </button>
+  </form>
