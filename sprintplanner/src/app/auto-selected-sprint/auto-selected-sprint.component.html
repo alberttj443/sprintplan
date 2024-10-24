@@ -14,7 +14,7 @@
     </div>
  
     <div  class="emptytext col-6" *ngIf="selectedStories.length<1">
-        No   stories since all stories exceed {{sprintCapacity}} point.
+        No   stories since all stories exceed {{sprintCapacity?sprintCapacity:0}} point.
    
  </div>
    
