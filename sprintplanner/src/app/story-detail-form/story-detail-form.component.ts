@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { StorymanageService } from '../services/storymanage.service';
 import { debounceTime, Subscription } from 'rxjs';
@@ -26,6 +26,12 @@ export class StoryDetailFormComponent  implements OnInit{
       point: [1, [Validators.required,Validators.min(1)]],
       description: ['']
     });
+  }
+  @HostListener('window:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Escape') { 
+     this.onCloseForm();
+    }
   }
   ngOnInit(): void {
     if(this.formData){  
