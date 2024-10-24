@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { StorymanageService } from '../services/storymanage.service';
 import { debounceTime, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Story } from '../model/story';
+import { Story } from '../model/story'; 
 
 @Component({
   selector: 'app-story-detail-form',
@@ -19,7 +19,8 @@ export class StoryDetailFormComponent  implements OnInit{
   @Output() onClose = new EventEmitter<boolean>();
   private subscription: Subscription|undefined;  
 
-  constructor(private fb: FormBuilder, private storyService:StorymanageService ) {
+  constructor(private fb: FormBuilder,
+     private storyService:StorymanageService ) {
     this.storyForm = this.fb.group({
       id:[null],
       name: ['', Validators.required],
@@ -56,7 +57,7 @@ export class StoryDetailFormComponent  implements OnInit{
   }
   this.onClose.emit(true);
   }
-  onCloseForm(){
+  onCloseForm(){ 
     this.onClose.emit(false);
   }
 }
