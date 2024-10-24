@@ -1,0 +1,30 @@
+nav {
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style: outside none none;
+        margin: 0;
+        padding: 0;
+        background-color: #16a584;
+        li {
+            padding: 20px;
+             
+                a {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 16px;
+                    display: block;
+                    color: #ffffff;
+                    text-transform: capitalize;  
+                    text-decoration: none;
+                    cursor: pointer;
+                    padding: 1px 1rem;
+                    &.active-link{
+                        text-decoration: underline;
+                    }
+                }
+
+           
+        }
+    }
+} 

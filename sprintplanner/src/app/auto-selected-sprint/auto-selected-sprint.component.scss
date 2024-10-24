@@ -1,0 +1,36 @@
+h3{
+    text-align: center;
+}
+.addbtn{
+    text-align: right;
+    margin-right: 20px;
+    
+}
+.storybox{
+    background-color: rgb(45, 69, 120);
+    padding: 1rem;
+    color: white;
+    border-radius: 12px;
+    margin: 1rem;
+    box-shadow: 3px 2px 7px #4c4949;
+    .point{
+        text-align: right;
+    opacity: 0.8;
+    }
+    .name{
+        margin-bottom: 2px;
+    }
+    .description{ 
+    max-height: 50px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    }
+    .action{
+        text-align: center;
+        margin-top: 4px;
+        cursor: pointer;
+    }
+}
+.emptytext{
+    text-align: center;
+}

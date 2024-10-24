@@ -13,10 +13,10 @@ import { AutoSelectedSprintComponent } from '../auto-selected-sprint/auto-select
   styleUrl: './sprint-calculator-form.component.scss'
 })
 export class SprintCalculatorFormComponent {
-  sprintCapacity: number = 0;
+  sprintCapacity: number |null= null;
   constructor(private storyService: StorymanageService) { }
   generateSprint() {
-    this.storyService.generateSprint(this.sprintCapacity);
+    this.storyService.generateSprint(this.sprintCapacity?this.sprintCapacity:0);
   }
 
   clearStories() {

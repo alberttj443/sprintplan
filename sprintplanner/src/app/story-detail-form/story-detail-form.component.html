@@ -1,18 +1,27 @@
-<form [formGroup]="storyForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">  Name:</label>
-      <input id="name" name="name" formControlName="name">
-      <span *ngIf="isUniqueName">The name is already exists</span>
+<div class="popup" (click)="onCloseForm()">
+    
+
+<form [formGroup]="storyForm" (ngSubmit)="onSubmit()" (click)="$event.stopPropagation();">
+    <h3>Add Story</h3>
+    <div> 
+      <input id="name" name="name" formControlName="name" placeholder="Name">
+      <span class="errortext" *ngIf="isUniqueName">The name is already exists</span>
     </div>
-    <div>
-      <label for="point">  Point:</label>
-      <input type="number" name="point" id="point" formControlName="point">
+    <div> 
+      <input type="number" name="point" id="point" formControlName="point" placeholder="Point">
     </div>
-    <div>
-        <label for="desc">Description:</label> 
-        <textarea name="desc" id="desc" formControlName="description"></textarea>
+    <div> 
+        <textarea name="desc" id="desc" formControlName="description" placeholder="Description"></textarea>
       </div>
       
-    <button type="submit" [disabled]="storyForm.invalid || isUniqueName">Submit</button> 
+   <div class="row">
+ <div class="col-4">
+    <button type="submit" [disabled]="storyForm.invalid || isUniqueName">Submit</button>  
+ </div>
+ <div class="col-4">  
     <button type="button" (click)="onCloseForm()">  Close   </button>
+ </div>
+   </div>
   </form>
+
+</div>

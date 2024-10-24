@@ -28,7 +28,7 @@ export class StoryDetailFormComponent  implements OnInit{
     });
   }
   ngOnInit(): void {
-    if(this.formData){
+    if(this.formData){  
       this.storyForm.setValue(this.formData);
     }
     this.subscription= this.storyForm.get('name')?.valueChanges

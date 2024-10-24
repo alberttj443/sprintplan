@@ -1,32 +1,33 @@
- 
-<app-story-detail-form [formData]="formData" (onClose)="onCloseDetailForm($event)" *ngIf="displayDetailForm"/>
+<app-story-detail-form [formData]="formData" (onClose)="onCloseDetailForm($event)" *ngIf="displayDetailForm" />
 
-<h3>Story </h3>
-<div>
+<h3>Stories </h3>
+<div class="addbtn">
     <button type="button" (click)="onAdd()"> Add Story</button>
 </div>
-<div>
-    <table border="1">
-       <tr>
-        <th>Name</th>
-        <th>Point</th>
-        <th>Action</th>
-       </tr>
-       <tr *ngFor="let story of storiesList">
-        <td >{{story.name}} </td>
-        <td >{{story.point}} </td>
-        <td>
-            <div (click)="onEdit(story)">
-                edit
+<div class="row centeralign">
+    <div class="col-3 storybox" *ngFor="let story of storiesList">
+        <div class="point">
+            Point: {{story.point}}
+        </div>
+        <div class="name">
+            {{story.name | titlecase}}
+        </div>
+        <div class="description">
+            {{story.description}}
+        </div>
+        <div class="row action">
+            <div class="col-6" (click)="onEdit(story)">
+                Edit
+            </div> 
+            <div class="col-6" (click)="onDelete(story)">
+                Remove
             </div>
+        </div>
+    </div>
 
-            <div (click)="onDelete(story)">
-                delete
-            </div>
-        </td>
-       </tr> 
-       <tr>
-        <td colspan="3" *ngIf="storiesList.length<1">No records to display</td>
-       </tr>
-    </table>
-</div> 
+   
+</div>
+ 
+<div  class="emptytext" *ngIf="storiesList.length<1">
+    No Items to Display
+</div>

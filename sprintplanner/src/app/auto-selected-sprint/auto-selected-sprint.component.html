@@ -1,19 +1,21 @@
 
- 
-<div *ngIf="selectedStories">
-    <table border="1">
-       <tr>
-        <th>Name</th>
-        <th>Point</th> 
-       </tr>
-       <tr *ngFor="let story of selectedStories">
-        <td >{{story.name}} </td>
-        <td >{{story.point}} </td>
+<div class="row centeralign"  *ngIf="selectedStories">
+    <div class="col-3 storybox" *ngFor="let story of selectedStories">
+        <div class="point">
+            Point: {{story.point}}
+        </div>
+        <div class="name">
+            {{story.name | titlecase}}
+        </div>
+        <div class="description">
+            {{story.description}}
+        </div>
          
-       </tr> 
-       <tr>
-        <td colspan="2" *ngIf="selectedStories.length<1"> 
-            no stories since all stories exceed {{sprintCapacity}} point.</td>
-       </tr>
-    </table>
-</div> 
+    </div>
+ 
+    <div  class="emptytext col-6" *ngIf="selectedStories.length<1">
+        No   stories since all stories exceed {{sprintCapacity}} point.
+   
+ </div>
+   
+</div>

@@ -1,0 +1,28 @@
+.popup{
+    position: fixed;
+    background: #39232359;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    h3{
+        margin: 0;
+        margin-bottom: 4px;
+    }
+    form{
+        width: calc(100% - 40px);
+        background: #ffffff;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        max-width: 500px;
+        padding: 2rem;
+        min-width: 250px;
+        border-radius: 20px;
+    }
+}
+.errortext{
+    color: red;
+
+}
