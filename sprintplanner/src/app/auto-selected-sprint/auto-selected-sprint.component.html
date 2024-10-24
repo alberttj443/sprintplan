@@ -1,0 +1,19 @@
+
+ 
+<div *ngIf="selectedStories">
+    <table border="1">
+       <tr>
+        <th>Name</th>
+        <th>Point</th> 
+       </tr>
+       <tr *ngFor="let story of selectedStories">
+        <td >{{story.name}} </td>
+        <td >{{story.point}} </td>
+         
+       </tr> 
+       <tr>
+        <td colspan="2" *ngIf="selectedStories.length<1"> 
+            no stories since all stories exceed {{sprintCapacity}} point.</td>
+       </tr>
+    </table>
+</div> 

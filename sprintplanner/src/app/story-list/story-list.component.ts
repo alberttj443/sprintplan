@@ -17,7 +17,9 @@ export class StoryListComponent {
   formData: Story | null = null;
   storiesList: Story[] = [];
   constructor(private storyService: StorymanageService) { }
-
+  ngOnInit(): void {
+    this.storiesList = this.storyService.storiesList;
+  }
   onAdd() {
     this.formData = null;
     this.displayDetailForm = true;

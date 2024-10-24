@@ -1,0 +1,9 @@
+<div>
+    <label for="capacity">Sprint Capacity:</label>
+    <input type="number" id="capacity" [(ngModel)]="sprintCapacity">
+</div>
+<button (click)="generateSprint()">Generate Sprint</button>
+<button (click)="clearStories()">Clear Stories</button>
+<button (click)="clearSelectedStories()">Clear Selected Stories</button>
+
+<app-auto-selected-sprint  [sprintCapacity]="sprintCapacity"></app-auto-selected-sprint>
